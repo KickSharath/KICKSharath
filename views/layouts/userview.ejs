@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title><%- title %></title>
+    <%- include('../partials/header') %>
+    </head>
+    <body class="bg-image">
+        <div id="navcolorby" data-aos="fade-right" class="sidenav">
+            <%- include('../partials/navbar') %>
+        </div>
+        <div id="navbodyman120" class="navbodyman bgnavbro d-none">
+            <%- include('../partials/usernavbody.ejs') %>
+        </div>
+        <div id="mainmobile" class="main">
+            <%- body  %>
+        </div>
+    </body>
+    <script>
+        AOS.init();
+    </script>
+</html>

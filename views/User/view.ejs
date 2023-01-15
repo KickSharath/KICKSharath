@@ -1,0 +1,105 @@
+<head>
+    <style>
+        .parallax {
+            background-image: url("/PostImages/<%= posts.mainimg %>");
+            width: 100%;
+            height: 550px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center; 
+            background-size: contain;   
+        }
+    </style>
+</head>
+<div class="parallax mb-4"></div>
+<%  var date = posts.createdAt %>
+<script>
+    var MyDate = "<%= date %>";
+    var MyNewDate = MyDate.slice(0, 16);
+    $(document).ready(function () {
+    $('.lead').html(MyNewDate);
+    });
+</script>
+
+    
+        <h1 class="display-4"><%= posts.title %></h1>
+
+        <p class="lead"><%= date %></p>
+        <hr class="my-4">
+        <p><%- posts.sanitizedHtml %></p>
+        
+
+        <div class="container-fluid d-flex justify-content-around">
+            <!-- <p class="far fa-heart"> 1.5k</p>  -->
+            <div>
+                <p class="far fa-comment" id="CCont"> </p>
+            </div>
+        </div>
+        <div class="container mt-4 md-4">
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="UsernameC">Name : </label>
+                <input id="UsernameC" class="form-control" type="text" name="UsernameC" placeholder="Enter Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="CommentC">Comment : </label>
+              <textarea class="form-control" name="CommentC" id="CommentC" rows="3" placeholder="Enter Your Comment" required></textarea>
+            </div>
+            <button id="submitComment" class="btn btn-outline-primary w-100">Submit</button>
+        </form>
+        </div>
+        <div class="container mt-4 mb-4 border shadow rounded border-light p-5">
+            <div id="nocommentDisplay"></div>
+            <div id="commentDisplay"></div>
+            <% comment.forEach(comment => { %>
+                <%  var date2 = comment.createdAt %>
+                    <script>
+                        var MyDate2 = "<%= date2 %>";
+                        var MyNewDate2 = MyDate2.slice(0, 16);
+                        $(document).ready(function () {
+                        $('.lead2').html(MyNewDate2);
+                    });
+                    </script>
+            <div class="container border-top">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight-light unC blockquote-footer"><%= comment.UserName %></p>
+                    <div class="d-flex">
+                        <p class="unC ">Date: &ThinSpace;</p><p class="unC text-muted lead2"></p>
+                    </div>
+                </div>
+                <p class="ml-5 unC"><%= comment.Comment %></p>
+            </div>
+            <% }) %>
+        </div>
+        <script>
+            
+            var totC = '<%= totalcomment %>';
+            $("#CCont").append(totC);
+
+            if(totC==0){
+                $("#nocommentDisplay").append('<p class="text-muted">No Comment</p>');
+            }
+
+            $('#submitComment').on("click", function (e) {
+            e.preventDefault();
+
+            var userC = $("#UsernameC").val();
+            var commentC = $("#CommentC").val();
+            $.ajax({
+                url: "/CommentCre",
+                type: "POST",
+                data: {username: userC,
+                        comment: commentC,
+                        postid: '<%= posts._id %>'},
+                success: function (response) {
+                    console.log(response);
+                    var html = '<div class="container border-top"><div class="d-flex justify-content-between"><p class="font-weight-light unC blockquote-footer">'+userC+'</p><div class="d-flex"><p class="unC ">Date: &ThinSpace;</p><p class="unC text-muted">Now</p></div></div><p class="ml-5 unC">'+commentC+'</p></div>';
+                   
+                    $("#nocommentDisplay").empty();
+                    $("#commentDisplay").append(html);
+                    var totC = '<%= totalcomment+1 %>';
+                    $('#CCont').empty().append(' '+totC)
+                }  
+            })
+        });
+        </script>

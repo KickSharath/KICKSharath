@@ -1,0 +1,30 @@
+<h1 class="mb-5">Dashboard</h1>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Title</h1>
+        <p class="lead">Subtitle</p>
+        <hr class="my-4">
+        <p>Content</p>
+    </div>
+</div>
+<div class="myrowtodasd row mt-5">
+
+    <div id="myloockman" type="button" onclick="location.href='/admin/allposts'" class="jumbotron col-6 border-right text-center bg-info">
+        <p class="lead">All Posts</p>
+        <hr class="my-4">
+       <h1 class="display-4"><%= CountP %></h1>
+    </div>
+    
+    <div id="myloockman" type="button" onclick="location.href='/admin/category'"  class="jumbotron col-6 border-left text-center bg-success">
+        <p class="lead">All Category</p>
+        <hr class="my-4">
+       <h1 class="display-4"><%= CountC %></h1>
+    </div>
+    
+    <div id="myloockman" style="background-color: darkkhaki;" type="button" onclick="location.href='/admin/project'"  class="jumbotron col-6 border-left text-center">
+        <p class="lead">All Project</p>
+        <hr class="my-4">
+       <h1 class="display-4"><%= contpro %></h1>
+    </div>
+
+</div>

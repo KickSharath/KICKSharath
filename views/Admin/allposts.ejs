@@ -1,0 +1,33 @@
+<h3>All Posts</h3>
+
+<h3>Work on Delete Button</h3>
+<table class="table mt-3 ml-4 table-striped">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col"><input type="checkbox" id="selall"></th>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Descrpition</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <form action="/admin/delete/mult" method="POST">
+    <tbody>
+        <% var i =0; %>
+        <% posts.forEach(posts => { %>
+      <tr>
+        <% i++; %>
+        <th class="text-center"><input type="checkbox" class="form-check-input ml-1" name="checkman" id="selme" value="<%= posts._id %>"></th>
+        <th><%= i %></th>
+        <td><%= posts.title %></td>
+        <td class="mytable-taxtall" ><%= posts.description %></td>
+        <td><a href="/admin/edit/<%= posts._id %>" class="btn btn-outline-info">Edit</a></td>
+        <td><a href="/admin/delete/<%= posts._id %>" class="btn btn-outline-danger">Delete</a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+    <tr><td colspan="6" class="text-center"><button class="btn btn-outline-danger" id="allselbutt" disabled>Delete Selected</button></td></tr>
+    </form>  
+</table>
+   

@@ -1,0 +1,40 @@
+<div class="container">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="titlehelp" placeholder="Enter Title">
+        </div>
+        <div class="form-group">
+            <label for="projectimg">Project Image</label>
+            <input type="file" class="form-control" name="projectimg" id="projectimg" aria-describedby="filehelp">
+            <!-- <small id="filehelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label for="link">Project Link</label>
+            <input type="text" class="form-control" name="link" id="link" aria-describedby="titlehelp" placeholder="http://www.example.com">
+        </div>
+        <div class="form-group">
+            <label for="des">project Description</label>
+            <input type="text" class="form-control" name="des" id="des" aria-describedby="titlehelp" placeholder="Enter Description">
+        </div>
+        <input type="submit" class="btn btn-outline-success w-100" value="Submit">
+    </form>
+
+    <div class="card-group">
+        <% project.forEach(project => { %>
+            <div class="projectcard card">
+              <img width="250px" height="250px" class="card-img-top" src="/ProjectImages/<%= project.projectimg %>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="<%= project.link %>" class="text-decoration-none" target="_blank">
+                    <%= project.title %>
+                  </a>
+                </h5>
+                <p style="margin: 0 !important;" class="card-text"><%= project.des %></p>
+                <a href="/admin/deleteproject/<%= project._id %>" class="btn btn-outline-danger">Delete</a><a href=""></a>
+              </div>
+            </div>
+          <% }) %>
+    </div>
+    
+</div>

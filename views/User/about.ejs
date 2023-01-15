@@ -1,0 +1,29 @@
+<head>
+    <style>
+       .card-text {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<div class="container">
+    <h3 class="p-4 mytext-92829">My Project</h3>
+    <br>
+    <div class="card-group">
+      <% if (contcatprojectno==0){ %>
+        <h3 class="text-muted">No Project Upload</h3>
+      <% } %>
+      <% project.forEach(project => { %>
+        <div class="projectcard card">
+          <img width="250px" height="250px" class="card-img-top" src="/ProjectImages/<%= project.projectimg %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="<%= project.link %>" class="text-decoration-none" target="_blank">
+                <%= project.title %>
+              </a>
+            </h5>
+            <p class="card-text"><%= project.des %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+</div>

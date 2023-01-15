@@ -1,0 +1,205 @@
+.bg-img{
+    width: 100%;
+    height: 450px;
+    opacity: 0.4;
+}
+.bgnavbro{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+    min-height: 100%;
+    overflow: visible;
+}
+.navbodyman {
+  margin-left: 0;
+  font-size: 28px;
+  padding: 0px 0px;
+}
+.unC{
+  font-size: 19px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    text-align: center;
+    background-color: #FF6D7E;
+    overflow: visible;
+}
+.sidenavmobile{
+    height: 100%;
+    position: fixed;
+    overflow: visible;
+}
+.main {
+    margin-left: 70px;
+    font-size: 28px;
+    padding: 0px 10px;
+}
+.mainmobile {
+    font-size: 28px;
+    padding: 0px 15px;
+}
+.text-nav1{
+    color: #FFBDD2;
+}
+.text-nav1:hover{
+    color: white;
+}
+.mycard{
+    border-top: 1px solid black;
+    width: 75%;
+}
+.card{
+    border-top: 1px solid black;
+    border-radius: 0;
+    margin-left: 9%;
+}
+.cardmobile{
+    border-top: 1px solid black;
+    border-radius: 0;
+    margin-left: 0;
+}
+.row{
+    margin-right: 0;
+}
+.bg-image{
+    background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)), url("http://www.demo.doganaydemir.com/wp-demo/zunday/wp-content/themes/zunday/assets/images/hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.boderb-h5{
+    background-color: #FF6D7E;
+    width: 15%;
+    height: 0.9px;
+    margin-left: 0;
+}
+.boderb-hr{
+    background-color: #FF6D7E;
+    width: 15%;
+}
+.my-links{
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: lighter;
+}
+.my-linkstag:hover, .my-links:hover{
+    color: #FF6D7E;
+    text-decoration: none;
+}
+.my-linkstag{
+    color: #6c757d;
+    font-size: 12px;
+    font-weight: lighter;
+}
+.card-text{
+    font-size: 15px;
+    margin: 60px;
+}
+.card-imag{
+    max-width: 750px;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card-imag:hover{
+  color: white;
+}
+.mybaseremove{
+  background-image: none !important;
+}
+.mybtn-1{
+    color: black;
+    font-size: 13px;
+    font-weight: lighter;
+    border: 0.1px solid #6c757d;
+    padding: 9px;
+}
+.mybtn-1:hover{
+  color: rgb(224, 224, 224);
+  border: 0.1px solid rgb(224, 224, 224);
+  text-decoration: none;
+}
+.page-item1{
+    font-size: 16px;
+    color: #FF6D7E
+}
+.page-link1{
+    font-size: 16px;
+    color: #FF6D7E
+}
+.page-link{
+    font-size: 16px;
+    color: #FF6D7E
+}
+.page-link:hover{
+    color: #85484f;
+    border-right: 1px #FF6D7E solid;
+    border-left: 1px #FF6D7E solid;
+}
+.page-itemhover{
+    border-top: none !important;
+    border-bottom: 1px #FF6D7E solid;
+}
+.mytext-92829{
+    border-bottom: 1px #FF6D7E solid
+}
+.projectcard{
+    max-width: 350px !important;
+}
+.page-item{
+    border-top: 1px #FF6D7E solid;
+}
+.pagemycssra{
+    margin: 50px;
+}
+.page-item:hover{
+    border-top: none;
+    border-bottom: 1px #FF6D7E solid;
+}
+.mybtn-2{
+  color: white;
+  border: 0.1px solid #fff;
+}
+.nav-iconbro{
+    margin-top: 50px; 
+    background-color: black; 
+    margin-left: 35px; 
+    border: 1px solid black; 
+    border-radius: 50%;
+}
+.nav-iconbromobile{
+    margin-top: 50px; 
+    background-color: black; 
+    margin-left: 3px; 
+    border: 1px solid black; 
+    border-radius: 50%;
+}
+.mycard-text1{
+    max-height: 90px;
+    overflow: hidden;
+}
+.visitmynav{
+    height: 100% !important; 
+    margin-left: 30px;
+    padding: 5px; 
+    padding-top: 10px;
+}
+.whitetext{
+    color: white !important;
+}
+@media screen and (max-height: 990px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+@media screen and (max-width: 550px) {
+    .card-imag{
+        height: 350px;
+    }
+    .parallax{
+        height: 350px;
+    }
+}

@@ -1,0 +1,48 @@
+
+        
+            <div class="col-12 bg-dark" id="sticky-sidebar">
+                <div class="nav flex-column">
+                    <a class="text-light nav-link" id="fullit"> <i class="fa fa-bars" aria-hidden="true"></i></a>
+                    
+                    <div class="nav-link" id="hidetext">
+                        <img class="img-thumbnail" src="https://i.pinimg.com/474x/65/25/a0/6525a08f1df98a2e3a545fe2ace4be47.jpg" width="200px" height="200px" alt="Profile">
+                        <br>
+                        <a href="/admin/register" class="navbar-brand text-light"><%= usernamebro %></a>
+                    </div>
+                    <a title="Home page" href="/" class="text-light nav-link"> <i class="fa fa-home" aria-hidden="true"></i> <span id="hidetext">Home</span></a>
+                    <a title="Dashboard" href="/admin" class="text-light nav-link"> <i class="fas fa-tachometer-alt" aria-hidden="true"></i> <span id="hidetext">Dashboard</span></a>
+                    <div id="hidetext" class="nav-link">
+                        <p class=" text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            POSTS
+                            <i class="fas fa-caret-down"></i>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                          <div class="">
+                              <a class="text-light nav-link" href="/admin/allposts">All Posts</a>
+                              <a class="text-light nav-link" href="/admin/createposts">Create Posts</a>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <a title="Category" class="text-light nav-link" href="/admin/category"> 
+                        <svg width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        </svg>
+                         <span id="hidetext">Category</span>
+                    </a>
+                    <a title="Project" class="text-light nav-link" href="/admin/project">
+                        <svg width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+                            <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                        </svg>
+                        <span id="hidetext">Project</span>
+                    </a>
+                    <a title="Logout - End the Session" class="text-light nav-link" href="/admin/logout">
+                        <svg width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                          </svg>
+                        <span id="hidetext">Logout</span>
+                    </a>
+                </div>
+            </div>

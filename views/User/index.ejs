@@ -1,0 +1,64 @@
+
+<div class="text-center mb-5">
+    <img src="/imagesbro/KICKSharath.PNG" width="350px" alt="Demo">
+    <br>
+    <hr style="background-color: #FF6D7E; width: 20%;">
+    <!-- <p><small><b>KICKSharath Blog</b></small></p> -->
+</div>
+<h3 class="mb-2 text-muted"><%= PostNull %></h3>
+<div id="homebloack" class="row">
+    <div id="postbloack" class="col-8">
+        <% posts.forEach(posts => { %>
+            <!-- <script>
+                var MyDate = "<%= posts.createdAt %>";
+                var MyNewDate = MyDate.slice(0, 16);
+                $(document).ready(function () { 
+                $('#<%= posts._id %>').html(MyNewDate);
+                console.log(MyNewDate);
+                });
+            </script> -->
+        <div data-aos="fade-up" id="stylingimgman" data-aos-duration="900" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('/PostImages/<%= posts.mainimg %>'); background-size: contain; " class="mybaseremove card card-imag mb-5 text-center bg-transparent">
+            <div class="card-body">
+                <h1 class="card-title mt-3"><a href="/view/<%= posts.slug %>" class="text-decoration-none"><%= posts.title %></a></h1>
+                <hr class="boderb-hr text-center">
+                <p id="posttexthide" class="card-text mycard-text1"><%= posts.description %></p>
+                <a href="/view/<%= posts.slug %>" id="metobroimg" class="mybtn-1">READ MORE</a>
+                <div class="d-flex justify-content-center mt-4">
+                    <p id="<%= posts._id %>" class=""><%= posts.CategoryName %></p>
+                    <p class="ml-5"></p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+        <div class="pagemycssra container"><%- include('../partials/pagination.ejs') %></div>
+    </div>
+    <div id="catblock" data-aos="fade-left" class="col-4">
+        <div class="mycard">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Category <hr class="boderb-h5"></h5>
+                <div>
+                    <% category.forEach(category => { %>
+                    <a href="/FindCategory/<%= category.CategoryName %>" class="my-links"><%= category.CategoryName %></a><hr>
+                    <% }) %>
+                </div>
+            </div>
+            <!-- <div class="card-body">
+                <h5 class="card-title text-muted">Recent <hr class="boderb-h5"></h5>
+                <div>
+                    <a href="#" class="my-links">hi</a><hr>
+                    <a href="#" class="my-links">hi</a><hr>
+                    <a href="#" class="my-links">hi</a><hr>
+                    <a href="#" class="my-links">hi</a><hr>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-muted">Recent <hr class="boderb-h5"></h5>
+                <div>
+                    <a href="#" class="my-linkstag">hi</a>
+                    <a href="#" class="my-linkstag">hsdsdsdi</a>
+                    <a href="#" class="my-linkstag">hi</a>
+                    <a href="#" class="my-linkstag">hdsdsdi</a>
+                </div>
+            </div> -->
+        </div>
+    </div>

@@ -1,0 +1,18 @@
+<% if(postLimit!=0) { %>
+<div id="postbloack1"></div>
+    <ul class="pagination mb-4">
+       <!-- <li class="page-item"><a id="nextpageman" class="page-link" href="#">Previous</a></li>
+      <li class="page-item1"><a class="page-link1">-</a></li> -->
+      <% for(var i=1; i<=postLimit; i++) { %>
+      <li id="hoverpageno<%= i %>" class="page-item"><a class="page-link" href="/get-Posts/<%= i %>"><%= i %></a></li> 
+      <% } %>
+      <!-- <li class="page-item1"><a class="page-link1">-</a></li>
+       <li class="page-item"><a id="previouspageman" class="page-link" href="#">Next</a></li> -->
+    </ul>
+    <% }%>
+<script>
+    var currentURL = window.location.href;
+    var a =  currentURL.split("").reverse().join("");
+    var b = a.split("/")[0];
+    $("#hoverpageno"+b).addClass("page-itemhover");
+</script>

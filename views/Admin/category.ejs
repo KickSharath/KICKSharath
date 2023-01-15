@@ -1,0 +1,56 @@
+<h3 class="alert alert-dark p-3 text-dark text-center">All Categories </h3>
+
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>Title</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="viewcatt">
+                    <% category.forEach(category => { %>
+                    <tr>
+                        <td><%= category.CategoryName %></td>
+                        <td><a href="/admin/Catedit/<%= category._id %>" class="disabled btn btn-sm btn-warning mb-2 w-100">Edit</a></td>
+                        <td><a href="/admin/Catdelete/<%= category._id %>"  class="btn btn-sm btn-danger w-100">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row p-4">
+        <div class="col-md-8">
+                <div class="form-group">
+                    <label for="CategoryName">Title</label>
+                    <input type="text" class="form-control w-100" id="CategoryName" name="CategoryName" placeholder="Enter Title">
+                </div>
+                    <button class="btn btn-outline-success " id="create-category">Create Category</button>
+        </div>
+    </div>
+    <script>
+        $('#create-category').on("click", function (e) {
+            e.preventDefault();
+
+            var catto = $("#CategoryName").val();
+            
+            $.ajax({
+                url: "/admin/category",
+                type: "POST",
+                data: {namec: catto},
+                success: function (response) {
+                    //console.log(response);
+                    var html = '<tr><td>'+response.CategoryName+'</td><td><a href="/admin/Catedit/<%= category._id %>" class="btn btn-sm btn-warning mb-2 w-100">Edit</a></td><td><a href="/admin/Catdelete/<%= category._id %>"  class="btn btn-sm btn-danger w-100">Delete</a></td></tr>';
+                   
+                    $("#viewcatt").append(html);
+                }  
+            })
+        });
+
+       
+    </script>

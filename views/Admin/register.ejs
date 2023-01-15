@@ -1,0 +1,30 @@
+    
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>UserName</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="viewcatt">
+                    <% Usergame.forEach(Usergame => { %>
+                    <tr>
+                        <td><%= Usergame.username %></td>
+                        <td><a href="/admin/Edit/<%= Usergame._id %>" class="disabled btn btn-sm btn-outline-warning mb-2 w-100">Edit</a></td>
+                        <td><a href="/admin/DeleteUser/<%= Usergame._id %>"  class="btn btn-sm btn-outline-danger w-100">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<p class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample34" role="button" aria-expanded="false" aria-controls="collapseExample34">Add User</p>
+<div class="collapse" id="collapseExample34" class="container">
+    <form action="" class="p-3" method="post">
+        <input class="mb-2 form-control" placeholder="Username" type="text" name="user" id="user">
+        <input class="mb-2 form-control" placeholder="Password" type="password" name="pass" id="pass">
+        <input class="mb-2 form-control" type="submit" value="Register">
+    </form>
+</div>

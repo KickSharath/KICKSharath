@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title><%- title  %></title>
+        <%- include('../partials/header') %>
+        <style>
+            #sticky-sidebar {
+                position:fixed;
+                max-width: 200px;
+                height: 100%;
+            }
+            .width-1{
+                max-width: 80px !important;
+            }
+            .col-4{
+                padding: 0 0 0 0;
+                max-width: 20% !important;
+            }
+            .col-12{
+                width: auto !important;
+                padding: 0 0 0 0;
+            }
+            .myrow {
+                display: flex;
+            }
+            .mytable-taxtall{
+                white-space: nowrap;
+                max-width: 50px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .col-4,.col-md-8{
+                position: unset !important;
+            }
+            .col-8,.col-6{
+                position: unset !important;
+            }
+            .alert {
+                 position: unset !important;
+            }
+            @media screen and (max-width: 999px) {
+                .col-4 {
+                    max-width: 100% !important;
+                }    
+            }
+            @media screen and (max-width: 662px) {
+               .myrowtodasd{
+                display: block !important;
+               }
+               #myloockman{
+                max-width: 100% !important;
+               }    
+               #sticky-sidebar {
+                max-width: 150px !important;
+                }
+            }
+            @media screen and (max-width: 550px) {
+                .col-4 {
+                    max-width: 100px !important;
+                } 
+                .width-1{
+                max-width: 100% !important;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="myrow">
+            <div class="col-4">
+
+                <%- include('../partials/adminnavbar') %>
+
+            </div>
+            <div class="col-8 mt-5">
+                <%- include('../partials/message') %>
+                <%- body  %>
+
+            </div>
+        </div>
+    </body>
+</html>
