@@ -1,5 +1,6 @@
 const express = require('express')
-const mongoose  = require('mongoose')
+// const mongoose  = require('mongoose')
+const { MongoClient } = require('mongodb');
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const path = require('path')
@@ -19,14 +20,21 @@ require('dotenv').config()
 
 const app = express()
 
-
-mongoose.connect(mongoDbURL, { 
-    useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
-    .then( response =>{
-      console.log('Connected Successfully'                                                                     )  
-    }).catch(err =>{
-        console.log('failed to Connected')      
-    })
+client.connect(mongoDbURL, { 
+  useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
+  .then( response =>{
+    console.log('Connected Successfully'                                                                     )  
+  }).catch(err =>{
+      console.log('failed to Connected')      
+  })
+  
+// mongoose.connect(mongoDbURL, { 
+//     useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
+//     .then( response =>{
+//       console.log('Connected Successfully'                                                                     )  
+//     }).catch(err =>{
+//         console.log('failed to Connected')      
+//     })
 
 app.use(session({
         name:'uniqueSessionID',
