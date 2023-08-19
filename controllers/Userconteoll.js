@@ -71,7 +71,7 @@ module.exports = {
     loginAut: (async (req, res) => {
         const username = req.body.user;
         const password = req.body.pass;
-        console.log(username+"+"+password)
+        // console.log(username+"+"+password)
         try{
             Logininfo.findOne({$or: [{username: username}]}).then(user =>{
                 if(user){
